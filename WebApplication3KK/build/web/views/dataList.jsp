@@ -16,7 +16,8 @@
     <h1>Lista użytkowników</h1>
         <a href="MainServlet?command=new"><button>Dodaj użytkownika</button></a>
         
-        <% List<Data> users = (List<Data>)request.getAttribute("users"); %> 
+        <% List<Data> users = (List<Data>)request.getAttribute("users"); %>
+        
         <table border>
             <thead>
                 <tr>

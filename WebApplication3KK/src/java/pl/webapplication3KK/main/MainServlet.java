@@ -15,7 +15,7 @@ public class MainServlet extends HttpServlet {
     private DataService dataService;
 
     public MainServlet() {
-        this.dataService = new DataService();
+        dataService = new DataService();
     }
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -48,7 +48,7 @@ public class MainServlet extends HttpServlet {
     
     private void userList(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.setAttribute("users", this.dataService.getData());
+        request.setAttribute("users", dataService.getData());
         request.getRequestDispatcher("/views/dataList.jsp").forward(request,response);
     }
     
@@ -67,8 +67,8 @@ public class MainServlet extends HttpServlet {
         String firstName = request.getParameter("firstName");
         String lastName = request.getParameter("lastName");
         String city = request.getParameter("city");
-        this.dataService.addData(firstName, lastName, city);
-        request.setAttribute("users", this.dataService.getData());
+        dataService.addData(firstName, lastName, city);
+        request.setAttribute("users", dataService.getData());
         request.getRequestDispatcher("/views/dataList.jsp").forward(request,response);
     }
     
@@ -78,16 +78,16 @@ public class MainServlet extends HttpServlet {
         String firstName = request.getParameter("firstName");
         String lastName = request.getParameter("lastName");
         String city = request.getParameter("city"); 
-        this.dataService.updateData(id, firstName, lastName, city);
-        request.setAttribute("users", this.dataService.getData());
+        dataService.updateData(id, firstName, lastName, city);
+        request.setAttribute("users", dataService.getData());
         request.getRequestDispatcher("/views/dataList.jsp").forward(request,response);
     }
     
     private void deleteUser(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
-        this.dataService.deleteData(id);
-        request.setAttribute("users", this.dataService.getData());
+        dataService.deleteData(id);
+        request.setAttribute("users", dataService.getData());
         request.getRequestDispatcher("/views/dataList.jsp").forward(request,response);
     }
 
