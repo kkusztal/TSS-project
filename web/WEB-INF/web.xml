@@ -17,6 +17,9 @@
             <url-pattern>/MainServlet</url-pattern>
             <url-pattern>/ImageServlet</url-pattern>
             <url-pattern>/views/index.jsp</url-pattern>
+            <url-pattern>/views/dataList.jsp</url-pattern>
+            <url-pattern>/websockets/index.jsp</url-pattern>
+            <url-pattern>/websockets/indexJSON.jsp</url-pattern>
         </web-resource-collection>
         
         <auth-constraint>

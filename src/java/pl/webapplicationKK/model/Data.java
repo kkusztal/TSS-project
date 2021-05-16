@@ -1,10 +1,12 @@
 package pl.webapplicationKK.model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author kasia
  */
-public class Data {
+public class Data implements Serializable {
     private int id;
     private String firstName;
     private String lastName;

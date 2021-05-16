@@ -25,6 +25,10 @@
         
         <a href="<c:url value="/MainServlet?command=list"/>">Lista użytkowników</a>
         <br>
+        <a href="<c:url value="/websockets/index.jsp"/>">WebSocket bez JSON</a>
+        <br>
+        <a href="<c:url value="/websockets/indexJSON.jsp"/>">WebSocket z użyciem JSON</a>
+        <br>
         <a href="<c:url value="/LogoutServlet"/>">Wylogowanie</a>
         
         <p align="center">Wersja aplikacji: <%=(String)getServletContext().getAttribute("sWersjaAplikacji")%> (metoda jspInit())</p>
@@ -39,11 +43,7 @@
         <img src="<c:url value="/ImageServlet"/>" alt="image" width="320" height="200">
         
         <br><br>
-        <h4>Wymagają implementacji:</h4>
+        <h4>Wymaga implementacji:</h4>
         <a href="#">REST JSON</a>
-        <br>
-        <a href="#">WebSocket bez JSON</a>
-        <br>
-        <a href="#">WebSocket z użyciem JSON</a>
     </body>
 </html>

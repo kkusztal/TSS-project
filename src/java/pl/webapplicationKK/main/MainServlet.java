@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import pl.webapplicationKK.model.Data;
 import pl.webapplicationKK.service.DataService;
 
@@ -25,11 +26,13 @@ public class MainServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         
+        HttpSession session = request.getSession();
+        
         String command = request.getParameter("command");
  
         if(command != null) {
             if(command.equals("list")) {
-                request.setAttribute("users", dataService.getAllData());
+                session.setAttribute("users", dataService.getAllData());
                 request.getRequestDispatcher("/views/dataList.jsp").forward(request,response);
             }
             
@@ -40,13 +43,13 @@ public class MainServlet extends HttpServlet {
                 String firstName = request.getParameter("firstName");
                 String lastName = request.getParameter("lastName");
                 dataService.addData(new Data(firstName, lastName));
-                request.setAttribute("users", dataService.getAllData());
+                session.setAttribute("users", dataService.getAllData());
                 request.getRequestDispatcher("/views/dataList.jsp").forward(request,response);
             }
             
             if(command.equals("processUpdate")) {
                 int id = Integer.parseInt(request.getParameter("id"));
-                request.setAttribute("user", dataService.getData(id));
+                session.setAttribute("user", dataService.getData(id));
                 request.getRequestDispatcher("/views/updateData.jsp").forward(request,response);
             }
             
@@ -55,14 +58,14 @@ public class MainServlet extends HttpServlet {
                 String firstName = request.getParameter("firstName");
                 String lastName = request.getParameter("lastName");
                 dataService.editData(new Data(id, firstName, lastName));
-                request.setAttribute("users", dataService.getAllData());
+                session.setAttribute("users", dataService.getAllData());
                 request.getRequestDispatcher("/views/dataList.jsp").forward(request,response);
             }
             
             if(command.equals("delete")) {
                 int id = Integer.parseInt(request.getParameter("id"));
                 dataService.deleteData(id);
-                request.setAttribute("users", dataService.getAllData());
+                session.setAttribute("users", dataService.getAllData());
                 request.getRequestDispatcher("/views/dataList.jsp").forward(request,response);
             }
         } else
