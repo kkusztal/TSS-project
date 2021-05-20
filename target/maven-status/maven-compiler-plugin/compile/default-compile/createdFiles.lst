@@ -1,0 +1,13 @@
+pl\webapplicationKK\dao\DataDAO.class
+pl\webapplicationKK\websockets\WebSocketResources.class
+pl\webapplicationKK\main\ImageServlet.class
+pl\webapplicationKK\main\MainServlet.class
+pl\webapplicationKK\websockets\WebSocketEndPointGenJSON.class
+pl\webapplicationKK\data\ApplicationParameters.class
+pl\webapplicationKK\service\DBConnect.class
+pl\webapplicationKK\model\Data.class
+pl\webapplicationKK\rest\ApplicationConfig.class
+pl\webapplicationKK\rest\WebserviceData.class
+pl\webapplicationKK\main\LogoutServlet.class
+pl\webapplicationKK\websockets\WebSocketEndPointGen.class
+pl\webapplicationKK\service\DataService.class
