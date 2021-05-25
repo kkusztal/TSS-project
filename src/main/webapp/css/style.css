@@ -1,0 +1,79 @@
+/* 
+    Created on : 2021-05-24, 10:03:18
+    Author     : kasia
+*/
+
+/*login.jsp, addData.jsp, updateData.jsp*/
+.form { 
+    margin-top: 15px; 
+}
+         
+.form-user { 
+    max-width: 380px; 
+    margin: 0 auto; 
+    padding: 15px 40px 50px; 
+}
+
+.form-user input { 
+    margin-bottom: 20px; 
+}
+
+.form-user .form-control { 
+    padding: 10px; 
+}
+
+/*header.jsp*/
+.menu-bar { 
+    background-color: #81C784; 
+}
+
+.navbar { 
+    padding: 0 30px; 
+}
+
+.navbar-nav { 
+    padding: 15px; 
+    margin-right: 50px; 
+}
+
+.btn { 
+    cursor: pointer; 
+}
+
+/*index.jsp*/
+section { 
+    margin-top: 25px; 
+}
+
+h1, h2 { 
+    margin-bottom: 25px; 
+}
+
+/*dataList.jsp*/
+.container { 
+    margin-top: 65px; 
+}
+
+h3 { 
+    padding-bottom: 10px; 
+} 
+
+.table { 
+    margin-bottom: 100px; 
+}
+
+/*websockets - *index.jsp, indexJSON.jsp*/
+#chartContainer {
+    height: 300px; 
+    width: 90%; 
+    margin: 0 auto; 
+    margin-top: 35px;
+}
+
+.info { 
+    margin-top: 15px; 
+}
+
+#messageID { 
+    margin-top: 15px; 
+}

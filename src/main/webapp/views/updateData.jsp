@@ -7,6 +7,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page import="pl.webapplicationKK.model.Data"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<jsp:include page="../web-components/header.jsp"></jsp:include>
 <!DOCTYPE html>
 <html>
     <head>
@@ -14,20 +15,18 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Edycja danych użytkownika</h1>
-
-        <form method="post" action="MainServlet?command=update">
-            <p>ID:&nbsp;
-                <input type="text" name="id" readonly value="<c:out value="${user.id}"/>">
-            </p>
-            <p>Imię:&nbsp;
-                <input type="text" value="<c:out value="${user.firstName}"/>" name="firstName">
-            </p>
-            <p>Nazwisko:&nbsp;
-                <input type="text" value="<c:out value="${user.lastName}"/>" name="lastName">
-            </p>
-            <input type="submit" value="Zatwierdź">
-        </form>
-        <a href="views/index.jsp">Strona główna</a>
+        <div class="container">
+            <h3 class="text-center mb-3">Edycja danych użytkownika</h3>
+            <hr>
+            <div class="form-user">
+                <form class="form" method="post" action="MainServlet?command=update">
+                    <input type="text" class="form-control" name="id" readonly value="<c:out value="${user.id}"/>">
+                <input type="text" class="form-control" value="<c:out value="${user.firstName}"/>" placeholder="Imię" name="firstName"/>
+                    <input type="text" class="form-control" value="<c:out value="${user.lastName}"/>" placeholder="Nazwisko"  name="lastName"/>
+                    <hr>
+                    <button type="submit" class="btn btn-lg btn-primary btn-block">Zatwierdź</button>
+                </form>
+            </div>
+        </div>
     </body>
 </html>

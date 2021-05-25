@@ -16,19 +16,19 @@ import javax.servlet.http.HttpSession;
 public class LogoutServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-         HttpSession session = request.getSession(true);
+        HttpSession session = request.getSession(true);
          
-         session.invalidate();
-         request.logout();
-         response.sendRedirect(request.getContextPath());
+        session.invalidate();
+        request.logout();
+        response.sendRedirect(request.getContextPath());
     }
     
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-         HttpSession session = request.getSession(true);
+        HttpSession session = request.getSession(true);
          
-         session.invalidate();
-         request.logout();
-         response.sendRedirect(request.getContextPath());
+        session.invalidate();
+        request.logout();
+        response.sendRedirect(request.getContextPath());
     }
 }

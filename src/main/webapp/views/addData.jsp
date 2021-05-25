@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<jsp:include page="../web-components/header.jsp"></jsp:include>
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,16 +13,17 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Dodanie danych użytkownika</h1>
-        <form method="post" action="MainServlet?command=add">
-            <p>Imię:&nbsp;
-                <input type="text" name="firstName">
-            </p>
-            <p>Nazwisko:&nbsp;
-                <input type="text" name="lastName">
-            </p>
-            <input type="submit" value="Zatwierdź">
-        </form>
-        <a href="views/index.jsp">Strona główna</a>
+        <div class="container">
+            <h3 class="text-center mb-3">Dodanie danych użytkownika</h3>
+            <hr>
+            <div class="form-user">
+                <form class="form" method="post" action="MainServlet?command=add">
+                    <input type="text" class="form-control" name="firstName" placeholder="Imię"/>
+                    <input type="text" class="form-control" name="lastName" placeholder="Nazwisko"/>
+                    <hr>
+                    <button type="submit" class="btn btn-lg btn-success btn-block">Zatwierdź</button>
+                </form>
+            </div>
+        </div>
     </body>
 </html>

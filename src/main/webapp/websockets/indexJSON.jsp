@@ -5,11 +5,15 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<jsp:include page="../web-components/header.jsp"></jsp:include>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <style>
+
+        </style>
     </head>
     <body>
         <script src="../javascript/canvasjs.min.js"></script>
@@ -90,18 +94,20 @@
             window.addEventListener("load", init, false);
         </script>
         
-        <h2 style="text-align: center">WebSocket z użyciem JSON</h2>
-        <br>
-        <br>
-        <div style="text-align: center">
-            <div id="chartContainer" style="height: 300px; width: 50%;"></div>
-            <form action="">
-                <input onclick="doSend(textID.value)" value="Press me" type="button">
-                <input id="textID" name="message" value="Hello WebSocket!" type="text">
-                <br>
-                <input id="messageID" name="messageInfo" value="" type="text" size="30">
-            </form>
+        <div class="container">
+            <h3 class="text-center mb-3">WebSocket z użyciem JSON</h3>
+            <hr>
+            <div style="text-align: center">
+                <div id="chartContainer"></div>
+                <form class="info" action="">
+
+                    <input id="textID" class="align-middle" name="message" value="Hello WebSocket!" type="text">
+                    <input onclick="doSend(textID.value)" value="Wyślij" type="button" class="btn btn-info">
+                    <br>
+                    <input id="messageID" name="messageInfo" value="" type="text" size="30">
+                </form>
+            </div>
+            <div id="output"></div>
         </div>
-        <div id="output"></div>
     </body>
 </html>
